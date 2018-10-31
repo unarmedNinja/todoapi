@@ -1,0 +1,13 @@
+version: '2.2'
+
+services:
+  todo:
+    container_name: todo_api
+    image: dev/todo_api
+    build: 
+      context: .
+      network: host
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - "cloudvps:45.62.246.57"
