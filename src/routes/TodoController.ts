@@ -31,6 +31,11 @@ export class TodoController implements interfaces.Controller {
         return this.todoService.newTodo(request.body);
     }
 
+    @httpGet('/:id')
+    public getTodo(request: Request): Promise<Todo> {
+        return this.todoService.getTodo(request.params.id);
+    }
+
     @httpPut('/:id')
     public updateTodo(request: Request): Promise<Todo> {
         return this.todoService.updateTodo(request.params.id, request.body);
